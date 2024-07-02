@@ -1,4 +1,4 @@
-# AGbaby's Frontend Template
+# AGbaby's Custom Components
 
 Packages include:
 - React Router Dom
