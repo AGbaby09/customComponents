@@ -1,0 +1,12 @@
+.GridList{
+    display: grid;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+.GridList>.item{
+    background: #66666671;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 100%;
+    height: 100%;
+}

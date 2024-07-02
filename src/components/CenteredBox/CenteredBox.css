@@ -1,0 +1,7 @@
+.CenteredBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+}

@@ -1,8 +1,14 @@
-# React + Vite
+# AGbaby's Frontend Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Packages include:
+- React Router Dom
+- React Tilt
+- Swiper
+- Framer Motion
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This template provides a minimal setup to get React frontend working in Vite with predefined stylings, and Components including:
+- RelBox: Relatively sized div
+- CenteredBox: Window relatively centered sizeable div
+- SizedBox: Window relatively sizeable div
+- Text: Txt1, Txt2, Txt3, Par; all with font size property as fs ranging from 1 through number of choice
+- GridList: a grided template with props for data, column number, height of item from 1 through number of choice. 
