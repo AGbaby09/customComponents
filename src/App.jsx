@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Home from './components/Home'
-import SizedBox from './components/SizedBox/SizedBox'
 import CenteredBox from './components/CenteredBox/CenteredBox'
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
   }, [width, height])
 
   return (
-    <main id="App" className='' style={{width: width, height: height}}>
+    <main id="App" className='center' style={{width: width, height: height}}>
       <CenteredBox w={100} h={100}>
         <Home />
       </CenteredBox>

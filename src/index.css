@@ -7,6 +7,8 @@
   box-sizing: border-box;
   position: relative;
   font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent; /* For webkit-based browsers like Chrome and Safari */
+  tap-highlight-color: transparent; /* Standard property */
 }
 
 button{
@@ -14,7 +16,10 @@ button{
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: pointer;      
+}
+input{
+ font-family: "Poppins", sans-serif; 
 }
 img{
   width: 100%;
