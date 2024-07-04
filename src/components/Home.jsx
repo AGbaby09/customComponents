@@ -18,12 +18,7 @@ const Home = () => {
   return (
     <RelBox w={100} h={100} className={"center"}>
       {/* <Contact1 /> */}
-      <ResDev
-        className={"borderR"}
-        max={{ w: 5, h: 50 }}
-        min={{ w: 60, h: 40 }}
-      >
-        <MenuComponent
+      <MenuComponent
         data={[
           {
             name: "Home",
@@ -51,15 +46,11 @@ const Home = () => {
           },
         ]}
       />
-      </ResDev>
     </RelBox>
   );
 };
 
 export default Home;
-
-
-
 
 {
   // the MenuComponent
