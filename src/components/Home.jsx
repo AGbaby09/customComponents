@@ -18,34 +18,9 @@ const Home = () => {
   return (
     <RelBox w={100} h={100} className={"center"}>
       {/* <Contact1 /> */}
-      <MenuComponent
-        data={[
-          {
-            name: "Home",
-            path: "",
-          },
-          {
-            name: "About",
-            path: "",
-          },
-          {
-            name: "Services",
-            path: "",
-          },
-          {
-            name: "Books",
-            path: "",
-          },
-          {
-            name: "Account",
-            path: "",
-          },
-          {
-            name: "Logout",
-            path: "",
-          },
-        ]}
-      />
+      <ResDev className={"borderR"} max={{ w: 30, h: 40 }}>
+        <RelBox className={"borderG"} w={50} h={50}></RelBox>
+      </ResDev>
     </RelBox>
   );
 };

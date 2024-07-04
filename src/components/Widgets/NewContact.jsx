@@ -79,6 +79,7 @@ const Template1 = styled(BaseContact)`
 `;
 
 export const Contact1 = () => {
+  
   return (
     <Template1 className={"center"}>
       <div className="top spBtn">

@@ -10,7 +10,9 @@
   -webkit-tap-highlight-color: transparent; /* For webkit-based browsers like Chrome and Safari */
   tap-highlight-color: transparent; /* Standard property */
 }
-
+a{
+  text-decoration: none;
+}
 button{
   border: none;
   display: flex;
