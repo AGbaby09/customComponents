@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { fixedHeight } from "../Functions";
 
 const Button = ({ children, className, onClick }) => {
-  
   return (
-    <motion.button onClick={onClick} className={className} whileTap={{ scale: 0.95 }}>
+    <motion.button
+      onClick={onClick}
+      className={className}
+      whileTap={{ scale: 0.95 }}
+    >
       {children}
     </motion.button>
   );
@@ -20,6 +24,12 @@ const BaseButton = styled(Button)`
   font-weight: 600;
 `;
 
+export const RoundButton = styled(Button)`
+  height: ${(props) => props?.size ? fixedHeight(props?.size) : fixedHeight(5)}px;
+  width: ${(props) => props?.size ? fixedHeight(props?.size) : fixedHeight(5)}px;
+  border-radius: 50%;
+`;
+
 export const BigButton = styled(BaseButton)`
   background: ${(props) => (props?.tapped ? "limegreen" : "red")};
   font-size: ${(2.5 / 100) * window.innerHeight}px;
@@ -29,23 +39,6 @@ export const BigButton = styled(BaseButton)`
 
   @media only screen and (max-width: 768px) {
     background: ${(props) => (props?.tapped ? "goldenrod" : "aqua")};
-    width: 100%
+    width: 100%;
   }
-`;
-
-export const SmallButton = styled(BaseButton)`
-background: goldenrod;
-font-size: ${(1 / 100) * window.innerHeight}px;
-width: 10%;
-height: 5%;
-border-radius: 10px;
-`;
-
-
-export const MedButton = styled(BaseButton)`
-  background: teal;
-  font-size: ${(1.75 / 100) * window.innerHeight}px;
-  width: 15%;
-  height: 7.5%;
-  border-radius: 12.5px;
 `;

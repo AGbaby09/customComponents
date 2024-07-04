@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Home from './components/Home'
-import CenteredBox from './components/CenteredBox/CenteredBox'
+import SizedBox from './components/SizedBox/SizedBox'
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth)
@@ -18,11 +18,11 @@ function App() {
 
   return (
     <main id="App" className='center' style={{width: width, height: height}}>
-      <CenteredBox w={100} h={100}>
+      <SizedBox w={100} h={100} className={"center"}>
         <Home />
-      </CenteredBox>
+      </SizedBox>
     </main>
   )
 }
 
-export default App
+export default App;

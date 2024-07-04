@@ -20,6 +20,8 @@ button{
 }
 input{
  font-family: "Poppins", sans-serif; 
+ border: 1px solid silver;
+ outline: none;
 }
 img{
   width: 100%;
