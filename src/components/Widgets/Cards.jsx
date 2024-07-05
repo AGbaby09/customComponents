@@ -109,6 +109,7 @@ export const PostCard1 = styled(PostCard)`
       align-items: center;
       justify-content: center;
       color: #aaa;
+      font-size: ${fixedHeight(1.5)}px;
     }
   }
 `;

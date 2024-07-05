@@ -146,6 +146,7 @@ const Body = styled(ResDev)`
       & > p {
         text-align: center;
         width: 100%;
+        font-size: ${fixedHeight(1.5)}px;
         height: 5%;
         border-bottom: 1px solid #9995;
         color: #9995;
@@ -264,13 +265,23 @@ export const Main = () => {
           </div>
           <div className="half">
             <Routes>
-              <Route path={"/timeline/*"} element={<BottomNav nav={"timeline"} />} />
+              <Route
+                path={"/timeline/*"}
+                element={<BottomNav nav={"timeline"} />}
+              />
             </Routes>
           </div>
         </div>
         <div className="bottom al-c">
           <Routes>
-            <Route path={"/timeline/feed"} element={<TimeLine data={data} />} />
+            <Route
+              path={"/timeline/feed"}
+              element={<TimeLineFeed data={data} />}
+            />
+            <Route
+              path={"/timeline/overview"}
+              element={<TimeLineOverview />}
+            />
           </Routes>
         </div>
         ;
@@ -279,7 +290,7 @@ export const Main = () => {
   );
 };
 
-const TimeLine = ({ data }) => {
+const TimeLineFeed = ({ data }) => {
   return (
     <>
       <motion.div className={"tile"}>
@@ -314,6 +325,16 @@ const TimeLine = ({ data }) => {
               </div>
             ))}
         </div>
+      </motion.div>
+    </>
+  );
+};
+
+const TimeLineOverview = ({ data }) => {
+  return (
+    <>
+      <motion.div className={"slot"}>
+         
       </motion.div>
     </>
   );
@@ -356,5 +377,4 @@ const BottomNav = ({ nav }) => {
       );
       break;
   }
-  
 };
