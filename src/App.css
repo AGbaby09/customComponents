@@ -2,10 +2,11 @@
   overflow: hidden;
   isolation: isolate;
   background-color: #1110;
-  background-blend-mode: multiply;
-  background-image: url("/src/assets/img/jjk-emerald.jpg");
+  /* background-blend-mode: multiply; */
+  /* background-image: url("/src/assets/img/twe.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
   /* padding: 0 2.5%; */
 }

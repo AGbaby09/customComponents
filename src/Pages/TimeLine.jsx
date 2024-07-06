@@ -162,7 +162,7 @@ const TimeLineOverview = ({ className, data }) => {
               Welcome To <br /> Your Timeline
             </h3>
             <p className="al-c">Start a conversation</p>
-            <img src={QMark} alt="" />
+            {/* <img src={QMark} alt="" /> */}
           </div>
           <div className="down spEven">
             <textarea name="" id="" className=""></textarea>
@@ -298,7 +298,10 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
               right: 0;
               width: ${fixedHeight(10)}px;
               height: ${fixedHeight(17)}px;
-              transform: scale(0.6);
+              background-blend-mode:multiply;
+              background: transparent;
+              /* display: none; */
+              scale: 0.6
             }
           }
 
@@ -374,6 +377,7 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
       }
     }
     &.community {
+      overflow: hidden;
       width: 25%;
       /* border: 1px solid white; */
 

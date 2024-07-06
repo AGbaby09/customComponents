@@ -62,3 +62,12 @@ export const compMotion = {
     transition: { duration: 0.5 },
   },
 };
+
+
+export const BackVid = styled("video")`
+  position: absolute;
+  z-index: -1;
+  width: ${fixedWidth(100)}px;
+  height: ${fixedHeight(100)}px;
+  object-fit: cover;
+`;
