@@ -3,10 +3,10 @@
   isolation: isolate;
   background-color: #1110;
   background-blend-mode: multiply;
-  background-image: url("/src/assets/img/darker.jpg");
+  background-image: url("/src/assets/img/darkest.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   
   /* padding: 0 2.5%; */
 }

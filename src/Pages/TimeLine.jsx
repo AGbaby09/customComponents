@@ -208,18 +208,43 @@ const TimeLineOverview = ({ className, data }) => {
       </div>
       <div className="problem">
         <ul className="slab scrollable">
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
-          <li><ConvoCard1 /></li>
+          <li>
+            <ConvoCard1 />
+          </li>
+          <li>
+            <ConvoCard1 />
+          </li>
+          <li>
+            <ConvoCard1 />
+          </li>
+          <li>
+            <ConvoCard1 />
+          </li>
         </ul>
       </div>
       <div className="community">
-        <img src={IPhone} alt="" className="full" />
+        <div className="high center">
+          <div className="dp"></div>
+          <div className="info">
+            <h3>Agbotse Selasi Michael</h3>
+            <p>Fullstack MERN Developer</p>
+            <div className="stats al-c">
+              <div className="uno">
+                <p className="center">Components</p>
+                <p className="center">350</p>
+              </div>
+              <div className="dos">
+                <p className="center">Components</p>
+                <p className="center">350</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="low">
+          <div className="toggleNav"></div>
+          <div className="viewNav"></div>
+        </div>
+        {/* <img src={IPhone} alt="" className="full" /> */}
       </div>
     </motion.section>
   );
@@ -231,13 +256,13 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
   /* padding: 0 ${fixedHeight(1)}px; */
   > span {
     height: 80%;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
   }
   > div {
     /* border: 1px solid grey; */
     isolation: isolate;
     height: 100%;
-    padding: ${fixedHeight(1)}px 0;
+    /* padding: ${fixedHeight(1)}px 0; */
 
     > .list {
       width: 100%;
@@ -257,26 +282,30 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
 
     &.post {
       width: 25%;
+      /* padding: 0 0 0 0; */
+      padding: ${fixedHeight(1)}px 0 0 0;
       /* border: 1px solid red; */
       display: flex;
       flex-direction: column;
       row-gap: ${fixedHeight(1)}px;
-
+      
       .slab {
         isolation: isolate;
+        /* border: 1px solid #fff5; */
         overflow: hidden;
-        width: 100%;
-        background: #ddd3;
+        margin: auto;
+        /* width: 100%; */
+          width: 95%;
+        background: #fff3;
+        backdrop-filter: blur(${fixedHeight(1.5)}px);
         text-shadow: 0 0 2px #222;
         border-radius: ${fixedHeight(1)}px;
-        backdrop-filter: blur(${fixedHeight(1.3)}px);
 
         &.one {
           height: 25%;
           box-shadow: -1px 2px 15px 1px #6661;
 
           .up {
-            /* border: 1px solid white; */
             height: 60%;
             padding: 0 ${fixedHeight(1)}px;
 
@@ -298,10 +327,10 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
               right: 0;
               width: ${fixedHeight(10)}px;
               height: ${fixedHeight(17)}px;
-              background-blend-mode:multiply;
+              background-blend-mode: multiply;
               background: transparent;
               /* display: none; */
-              scale: 0.6
+              scale: 0.6;
             }
           }
 
@@ -334,7 +363,7 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
         &.two,
         &.three {
           height: 37.5%;
-          padding: 0 ${fixedHeight(2.5)}px;
+          /* padding: 0 ${fixedHeight(2.5)}px; */
           background: none;
           backdrop-filter: none;
 
@@ -360,17 +389,18 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
       }
     }
     &.problem {
-      width: 27.5%;
+      width: 35%;
       /* border: 1px solid red; */
       .slab {
-        width: 95%;
+        width: 97.5%;
         height: 100%;
         margin: auto;
         /* backdrop-filter: blur(${fixedHeight(1.3)}px); */
+        /* border: 1px solid red; */
 
         li {
           width: 100%;
-          padding: ${fixedHeight(1)}px;
+          padding: ${fixedHeight(1)}px 0;
           /* background: #fff2; */
           height: ${fixedHeight(25)}px;
         }
@@ -378,13 +408,88 @@ export const OverviewTimeLine = styled(TimeLineOverview)`
     }
     &.community {
       overflow: hidden;
-      width: 25%;
+      width: 40%;
       /* border: 1px solid white; */
+      padding: ${fixedHeight(1)}px;
 
-      img{
-        scale: 4;
-        object-fit: contain;
-        top: 1%;
+      > .high {
+        /* border: 1px solid teal; */
+        width: 100%;
+        height: 30%;
+        border-radius: ${fixedHeight(2)}px;
+        backdrop-filter: blur(${fixedHeight(1.5)}px);
+        background: #0003;
+
+        .dp {
+          background: #fff5;
+          width: ${fixedHeight(18)}px;
+          height: ${fixedHeight(18)}px;
+          /* margin-bottom: 5%; */
+          border-radius: 50%;
+        }
+        .info {
+          /* border: 1px solid white; */
+          width: auto;
+          height: auto;
+          display: block;
+          place-content: center;
+          margin-left: ${fixedHeight(2)}px;
+          > h3 {
+            font-size: ${fixedHeight(2)}px;
+            color: white;
+          }
+          > p {
+            font-size: ${fixedHeight(1.2)}px;
+            color: silver;
+          }
+
+          > .stats {
+            /* border: 1px solid red; */
+            width: auto;
+            height: auto;
+            gap: ${fixedHeight(2)}px;
+            margin-top: ${fixedHeight(1)}px;
+            > div {
+              background: white;
+              height: ${fixedHeight(10)}px;
+              border-radius: ${fixedHeight(1.5)}px;
+              padding: ${fixedHeight(1)}px;
+
+              > p:first-child {
+                font-size: ${fixedHeight(1.4)}px;
+                height: 30%;
+              }
+              > p:last-child {
+                font-weight: 800;
+                font-size: ${fixedHeight(5)}px;
+                height: 70%;
+              }
+            }
+          }
+        }
+      }
+
+      > .low {
+        height: 70%;
+        width: 100%;
+        /* background: red; */
+        padding: ${fixedHeight(1.4)}px 0 0 0;
+
+        .toggleNav {
+          width: 100%;
+          height: 10%;
+          border-radius: ${fixedHeight(5)}px;
+          background: #fff3;
+          backdrop-filter: blur(${fixedHeight(1.5)}px);
+        }
+        .viewNav {
+          margin-top: ${fixedHeight(1.4)}px;
+          width: 100%;
+          height: 85%;
+          border-radius: ${fixedHeight(5)}px;
+          background: #fff3;
+          backdrop-filter: blur(${fixedHeight(1.5)}px);
+        }
       }
     }
   }

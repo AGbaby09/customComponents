@@ -25,9 +25,9 @@ const StyledBase = styled(ResDev)`
 
   & .main-body {
     /* background: #eee3; */
-    background: #fff1;
-    backdrop-filter: blur(${fixedHeight(1)}px);
-    border: 1px solid rgba(192, 192, 192, 0.5);
+    background: #0001;
+    /* backdrop-filter: blur(${fixedHeight(0.5)}px); */
+    /* border: 1px solid rgba(192, 192, 192, 0.5); */
     margin: auto 0;
   }
 `;
@@ -39,6 +39,8 @@ const Body = styled(ResDev)`
     padding: 0 ${fixedHeight(3)}px;
     background: #fff1;
     /* box-shadow: 0px ${fixedHeight(1)}px 7.5px 1px #6664; */
+    border-bottom: ${fixedHeight(0.1)}px solid #aaa5;
+    border-radius: ${fixedHeight(2)}px ${fixedHeight(2)}px 0 0;
     backdrop-filter: blur(${fixedHeight(1)}px);
 
     width: 100%;
@@ -136,7 +138,7 @@ const Body = styled(ResDev)`
     z-index: 20;
     right: 0;
     padding: ${fixedHeight(1)}px;
-    
+
     > .full {
       -webkit-backdrop-filter: ${fixedHeight(1)}px;
       backdrop-filter: ${fixedHeight(1)}px;

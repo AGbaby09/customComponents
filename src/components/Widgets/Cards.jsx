@@ -322,8 +322,8 @@ export const FollowCard1 = styled(FollowCard)`
   height: 100%;
   border-radius: ${fixedHeight(1)}px;
   padding: ${fixedHeight(1)}px;
-  background: #fff4;
-  backdrop-filter: blur(${fixedHeight(1)}px);
+  background: #fff3;
+  backdrop-filter: blur(${fixedHeight(1.5)}px);
   box-shadow: -1px 2px 7.5px 1px #6662;
 
   > .left {
@@ -367,6 +367,7 @@ const ConvoCard = ({ className }) => {
 };
 
 export const ConvoCard1 = styled(ConvoCard)`
-  background: #fff9;
+  background: #fff3;
+  backdrop-filter: blur(${fixedHeight(1.5)}px);
   border-radius: ${fixedHeight(2.5)}px;
 `;
