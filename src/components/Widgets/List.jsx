@@ -35,9 +35,10 @@ const StyledBase = styled(BaseList)`
 
       & > a {
         padding: 0 ${fixedHeight(1.5)}px;
-        background-color: #eee;
+        background-color: #fff4;
         text-decoration: none;
         color: #444;
+        backdrop-filter: blur(${fixedHeight(1)}px);
 
         &:hover {
           background-color: #6668;
@@ -45,7 +46,7 @@ const StyledBase = styled(BaseList)`
         }
 
         &.active {
-          background-color: #444;
+          background-color: #2229;
           color: #fff;
         }
 

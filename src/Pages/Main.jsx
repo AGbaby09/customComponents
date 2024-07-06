@@ -12,6 +12,8 @@ import {
   PostCard1,
 } from "../components/Widgets/Cards";
 import { NavLink, Routes, Route } from "react-router-dom";
+import CompLink from "../components/Widgets/CompLink";
+import { FeedTimeLine, OverviewTimeLine } from "./TimeLine";
 
 const Base = ({ children, className }) => {
   return <motion.div className={className}>{children}</motion.div>;
@@ -22,7 +24,9 @@ const StyledBase = styled(ResDev)`
   display: flex;
 
   & .main-body {
-    background: #eee3;
+    /* background: #eee3; */
+    background: #fff1;
+    backdrop-filter: blur(${fixedHeight(1)}px);
     border: 1px solid rgba(192, 192, 192, 0.5);
     margin: auto 0;
   }
@@ -33,8 +37,9 @@ const Body = styled(ResDev)`
 
   & .top {
     padding: 0 ${fixedHeight(3)}px;
-    background: #fff;
+    background: #fff1;
     /* box-shadow: 0px ${fixedHeight(1)}px 7.5px 1px #6664; */
+    backdrop-filter: blur(${fixedHeight(1)}px);
 
     width: 100%;
     height: 10%;
@@ -45,6 +50,7 @@ const Body = styled(ResDev)`
       height: 50%;
 
       & h4 {
+        color: #eee;
       }
       & .buttons {
         /* border: 1px solid red; */
@@ -59,6 +65,7 @@ const Body = styled(ResDev)`
 
           & p {
             font-size: ${fixedHeight(1.5)}px;
+            background-color: #eee3;
             /* border: 1px solid red; */
             max-width: 100%;
             width: auto;
@@ -66,13 +73,14 @@ const Body = styled(ResDev)`
             padding: 0 ${fixedHeight(1)}px;
             border-radius: ${fixedHeight(5)}px;
             text-align: center;
+            color: #ccc;
           }
         }
 
         & button {
-          background: #eee;
+          background: #eee3;
           font-size: ${fixedHeight(2)}px;
-          color: #444;
+          color: #eee;
         }
       }
       & .navButtons {
@@ -88,7 +96,7 @@ const Body = styled(ResDev)`
           /* box-shadow: -1px 2px 7.5px 1px #6664; */
           background: transparent;
           font-size: ${fixedHeight(1.5)}px;
-          color: #444;
+          color: #ddd;
 
           &.active {
             /* background-color: red; */
@@ -114,7 +122,7 @@ const Body = styled(ResDev)`
             width: 0px;
             height: 0%;
             position: absolute;
-            background-color: #888;
+            background-color: #ddd;
           }
         }
       }
@@ -124,11 +132,15 @@ const Body = styled(ResDev)`
   & .weather,
   .time {
     position: absolute;
+    top: 10%;
+    z-index: 20;
     right: 0;
     padding: ${fixedHeight(1)}px;
-
-    & > .full {
-      background: white;
+    
+    > .full {
+      -webkit-backdrop-filter: ${fixedHeight(1)}px;
+      backdrop-filter: ${fixedHeight(1)}px;
+      background: #fff8;
     }
   }
 
@@ -136,48 +148,7 @@ const Body = styled(ResDev)`
     width: 100%;
     height: 90%;
     padding: 0 ${fixedHeight(1.5)}px;
-
-    & > .tile {
-      width: 30%;
-      height: 100%;
-      padding: 0 ${fixedHeight(1)}px;
-      /* border: 1px solid red; */
-
-      & > p {
-        text-align: center;
-        width: 100%;
-        font-size: ${fixedHeight(1.5)}px;
-        height: 5%;
-        border-bottom: 1px solid #9995;
-        color: #9995;
-      }
-      & > .bottomList {
-        width: 100%;
-        /* border: 1px solid blue; */
-        height: 95%;
-        display: grid;
-        grid-template-columns: 1fr;
-
-        & > div.bottomCard {
-          /* border: 1px solid black; */
-          width: 100%;
-          height: ${fixedHeight(35)}px;
-          padding: ${fixedHeight(1)}px;
-        }
-        & > div.bottomArticle {
-          /* border: 1px solid black; */
-          width: 100%;
-          height: ${fixedHeight(20)}px;
-          padding: ${fixedHeight(1)}px;
-        }
-        & > div.bottomEvent {
-          /* border: 1px solid black; */
-          width: 100%;
-          height: ${fixedHeight(27.5)}px;
-          padding: ${fixedHeight(1)}px;
-        }
-      }
-    }
+    overflow: hidden;
   }
 `;
 
@@ -269,18 +240,26 @@ export const Main = () => {
                 path={"/timeline/*"}
                 element={<BottomNav nav={"timeline"} />}
               />
+              <Route
+                path={"/dashboard/*"}
+                element={<BottomNav nav={"dashboard"} />}
+              />
             </Routes>
           </div>
         </div>
-        <div className="bottom al-c">
+        <div className="bottom">
           <Routes>
             <Route
-              path={"/timeline/feed"}
-              element={<TimeLineFeed data={data} />}
+              path={"/timeline"}
+              element={<CompLink path={"/home/timeline/overview"} />}
             />
             <Route
               path={"/timeline/overview"}
-              element={<TimeLineOverview />}
+              element={<OverviewTimeLine data={data}/>}
+              />
+            <Route
+              path={"/timeline/feed"}
+              element={<FeedTimeLine data={data}/>}
             />
           </Routes>
         </div>
@@ -290,45 +269,7 @@ export const Main = () => {
   );
 };
 
-const TimeLineFeed = ({ data }) => {
-  return (
-    <>
-      <motion.div className={"tile"}>
-        <p className="center">Recent Components</p>
-        <div className="bottomList scrollable">
-          {data &&
-            data.map((item) => (
-              <div className="bottomCard">
-                <PostCard1 />
-              </div>
-            ))}
-        </div>
-      </motion.div>
-      <motion.div className={"tile"}>
-        <p className="center">Recent Articles</p>
-        <div className="bottomList scrollable">
-          {data &&
-            data.map((item) => (
-              <div className="bottomArticle">
-                <ArticleCard1 />
-              </div>
-            ))}
-        </div>
-      </motion.div>
-      <motion.div className={"tile"}>
-        <p className="center">Upcoming Events</p>
-        <div className="bottomList scrollable">
-          {data &&
-            data.map((item) => (
-              <div className="bottomEvent">
-                <EventCard1 />
-              </div>
-            ))}
-        </div>
-      </motion.div>
-    </>
-  );
-};
+
 
 const TimeLineOverview = ({ data }) => {
   return (
@@ -355,6 +296,24 @@ const BottomNav = ({ nav }) => {
             Activities
           </NavLink>
           <NavLink className={"center"} to={"/home/timeline/Other"}>
+            Other
+          </NavLink>
+        </div>
+      );
+      break;
+    case "dashboard":
+      return (
+        <div className="navButtons al-c">
+          <NavLink className={"center"} to={"/home/dashboard/overview"}>
+            Overview
+          </NavLink>
+          <NavLink className={"center"} to={"/home/dashboard/analytics"}>
+            Analytics
+          </NavLink>
+          <NavLink className={"center"} to={"/home/dashboard/profile"}>
+            Profile
+          </NavLink>
+          <NavLink className={"center"} to={"/home/dashboard/Other"}>
             Other
           </NavLink>
         </div>

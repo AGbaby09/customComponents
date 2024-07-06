@@ -26,6 +26,17 @@ export const RoundButton = styled(BaseButton)`
     border-radius: 50%;
     background: #666;
     color: white;
+    isolation: isolate;
+    overflow: hidden;
+`;
+
+export const PillButton = styled(BaseButton)`
+  border-radius: ${(props) => fixedHeight(props.radius || 0.5)}px;
+  padding: 0 ${(props) => fixedHeight(props.gap || 2)}px;
+  width: auto;
+  height: 80%;
+  background-color: #444;
+  color: #fff;
 `;
 
 export const compMotion = {

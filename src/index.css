@@ -9,6 +9,7 @@
   font-family: "Poppins", sans-serif;
   -webkit-tap-highlight-color: transparent; /* For webkit-based browsers like Chrome and Safari */
   tap-highlight-color: transparent; /* Standard property */
+  /* transition: 500ms ease; */
 }
 a{
   text-decoration: none;

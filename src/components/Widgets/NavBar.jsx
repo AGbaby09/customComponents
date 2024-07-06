@@ -16,6 +16,8 @@ const StyledNav = styled(BaseNav)`
   & .top{
     /* border: 1px solid gold; */
     height: 11%;
+    color: #fff8;
+    
     & h4{
             font-size: ${fixedHeight(2.25)}px;
         }
