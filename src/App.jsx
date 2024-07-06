@@ -5,7 +5,7 @@ import SizedBox from "./components/SizedBox/SizedBox";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Main } from "./Pages/Main";
 import styled from "styled-components";
-import clearsky from "./assets/img/pla.mp4"
+import clearsky from "./assets/img/plaa.mp4"
 import { BackVid } from "./components/Functions";
 
 
@@ -29,8 +29,8 @@ function App() {
         className="center"
         style={{ width: width, height: height }}
       >
-        <BackVid src={clearsky} autoPlay loop muted>
-        </BackVid>
+        {/* <BackVid src={clearsky} autoPlay loop muted>
+        </BackVid> */}
           
         <SizedBox w={100} h={100} className={"center"}>
           <Routes>
